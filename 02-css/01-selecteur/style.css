@@ -1,0 +1,86 @@
+h1{
+    background-color: aqua;
+}
+main p{
+    background-color: blueviolet;
+}
+main > p{
+    background-color: firebrick;
+}
+h1 ~ p{
+    background-color: lawngreen;
+}
+h1 + p{
+    background-color:peru ;
+}
+/* Les pseudo classes */
+li:hover{
+    background-color: pink;
+}
+header p:nth-child(2){
+    color: skyblue;
+}
+header p:nth-of-type(2){
+    color: tomato;
+}
+h1 a {
+    color:olive;
+}
+h1 a:visited{
+    color: orange;
+}
+h1 a:active{
+    color:black;
+}
+h1 a:focus{
+    color: royalblue;
+}
+p span:not(:nth-child(2)){
+    color: salmon;
+}
+*:not(h1, a){
+    font-size: 20px;
+}
+:where(article, header) p{
+    background-color: red !important; 
+}
+/* Pseudo Element */
+/* Reconnaissable à la syntaxe suivante "::pseudoElement" */
+article p::first-letter{
+    font-size: 50px;
+}
+main > p::first-line{
+    font-weight: bold;
+}
+h1::before{
+    content: "C'est faux ->";
+}
+h1::after{
+    content: "<- Il ment !";
+}
+/* Les classes, id et autres attributs */
+#MenuImportant{
+    font-size: 42px;
+    font-weight: bold;
+    color: red;
+}
+.peuImportant{
+    font-size: 8px;
+    font-weight: 100;
+    color: gainsboro;
+}
+a[target]{
+    font-style: italic;
+}
+a[href*="amazon"]{
+    font-family: monospace;
+}
+a[href$=".fr"]{
+    background-color: blue;
+}
+a[href^="http"]::before{
+    content: "✓";
+}
+li:nth-child(1){
+    color: gold;
+}

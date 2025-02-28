@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>les balises de base des formulaires</title>
+</head>
+<body>
+    <form action="https://www.google.fr/search" method="get">
+        <label for="recherche">Recherche :</label>
+        <input type="text" name="q" id="recherche">
+        <input type="submit" value="Envoyer" autofocus>
+    </form>
+    <hr>
+    <form action="./02-formulaire.html" method="post">
+        <input type="text" name="prenom" id="prenom" value="Maurice"readonly>
+        <br>
+        <input type="text" name="nom" id="nom" placeholder="Votre nom" disabled>
+        <br>
+        <input type="date" name="birthday" id="birthday">
+        <br>
+        <input type="color" name="couleur" id="couleur">
+        <br>
+        <input type="email" name="mail" id="mail">
+        <br>
+        <button type="submit">Envoyer</button>
+        <br>
+        <input type="password" name="mdp" id="mdp">
+        <br>
+        <button type="submit">Envoyer</button>
+        <br>
+        <input type="file" name="fichier" id="fichier" multiple>
+        <br>
+        <button type="submit">Envoyer</button>
+        <br>
+        <input type="hidden" name="csrf">
+        <button type="submit">Envoyer</button>
+        <textarea name="commentaire" id="comm"></textarea>
+        <br>
+        <fieldset>
+            <legend>Quel catégorie appréciez vous ?</legend>
+            <input type="checkbox" name="aventure" id="av">
+            <label for="av">Aventure</label>
+            <br>
+            <input type="checkbox" name="romantique" id="ro">
+            <label for="ro">Romantique</label>
+            <br>
+            <input type="checkbox" name="horreur" id="ho">
+            <label for="ho">Horreur</label>
+        </fieldset>
+        <fieldset>
+            <legend>Choisis ton langage préféré</legend>
+            <input type="radio" name="langage" id="html" checked>
+            <label for="html">HTML</label>
+            <br>
+            <input type="radio" name="langage" id="css">
+            <label for="css">CSS</label>
+            <br>
+            <input type="radio" name="langage" id="js">
+            <label for="js">JavaScript</label>
+        </fieldset>
+        <select name="repas" id="repas"multiple>
+            <option value="pizza">Pizza !</option>
+            <option value="pasta" selected>Pâtes !</option> 
+            <option value="Burger">Burger !</option>
+        </select>
+        <input type="text" name="test" id="test" required>
+        <button type="submit">Envoyer</button>
+<input type="button" value="Coucou">     
+    </form>
+</body>
+</html>

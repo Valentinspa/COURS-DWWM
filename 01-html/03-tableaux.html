@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balises de base pour les tableaux</title>
+    <style>
+        table, td, th
+        {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>pomme</td>
+            <td>cerise</td>
+        </tr>
+        <tr>
+            <td>banane</td>
+            <td>tomate</td>
+        </tr>
+    </table>
+    <table>
+       <thead>
+            <tr>
+                <th colspan="2">Fruit</th>
+                <th colspan="2">Légume</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>banane</td>
+                <td>cerise</td>
+                <td>carotte</td>
+                <td rowspan="2"> courgette</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">tomate</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

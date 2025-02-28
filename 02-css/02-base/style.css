@@ -1,0 +1,22 @@
+/* permet d'importer une police d'écriture */
+@font-face {
+    
+    font-family: DancingScript;
+    src: url(../DancingScript-VariableFont_wght.ttf);
+}
+/* le selecteur root correspond à la racine du site, généralement la balise html */
+:root
+{
+    /* Les variables CSS, permettent de crée un nom procédé de "--" qui contiendras une valeur, couleur, taille ou autre Cette valeur sera réutilisable où l'on souhaite dans le reste du CSS*/
+    --main-background-color: blue;
+    --chausette: green;
+    --divTextSize: 30px;
+    font-size: 8px;
+}
+.target1{
+    font-size: var(--divTextSize);
+    font-family: DancingScript;
+}
+.target2{
+    font-size: clamp(16px, 5vw, 30px);
+}
