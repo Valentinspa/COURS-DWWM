@@ -1,86 +1,159 @@
-h1{
+h1
+{
     background-color: aqua;
 }
-main p{
-    background-color: blueviolet;
+/* Enfant Direct ou Indirect */
+/* Selectionne tout p dans un main */
+main p
+{
+    background-color: lightsalmon;
 }
-main > p{
-    background-color: firebrick;
+/* Selectionne tout p, directement enfant du main, sans autre balise les séparants */
+main > p
+{
+    background-color: olive;
 }
-h1 ~ p{
-    background-color: lawngreen;
+/* Frère direct ou indirect */
+/* Selectionne tous les p suivant un h1 */
+h1 ~ p
+{
+    background-color: burlywood;
 }
-h1 + p{
-    background-color:peru ;
+/* Selectionne tout p juste après un h1 */
+h1 + p
+{
+    background-color: crimson;
 }
 /* Les pseudo classes */
-li:hover{
-    background-color: pink;
+/* Elles se reconnaissent à la syntaxe suivante ":nomPseudoClasse" */
+/* Au survol de l'élément */
+li:hover
+{
+    background-color: chartreuse;
 }
-header p:nth-child(2){
+/* selectionne le second enfant, si c'est un p */
+header p:nth-child(2)
+{
     color: skyblue;
 }
-header p:nth-of-type(2){
-    color: tomato;
+/* Selectionne le second p enfant de header */
+header p:nth-of-type(2)
+{
+    color: peachpuff;
 }
-h1 a {
-    color:olive;
+/* Existe aussi en comptant depuis la fin, avec nth-last-child() et nth-last-of-type() */
+/* Les balises a n'héritent pas des propriétés de couleur de leurs parents, il faut les cibler directement */
+h1 a
+{
+    color: red;
 }
-h1 a:visited{
-    color: orange;
+/* couleur du lien si visité */
+h1 a:visited
+{
+    color: gold;
 }
-h1 a:active{
-    color:black;
+/* couleur du lien quand on clique dessus */
+h1 a:active
+{
+    color: darkmagenta;
 }
-h1 a:focus{
-    color: royalblue;
+/* Couleur du lien quand il a le focus */
+h1 a:focus
+{
+    color: steelblue;
 }
-p span:not(:nth-child(2)){
-    color: salmon;
+/* tous les span dans un p, sauf le second */
+p span:not(:nth-child(2))
+{
+    color: magenta;
 }
-*:not(h1, a){
+/* toute les balises, sauf h1 et a */
+/* h1{ font-size: 5px;} */
+*:not(h1, a)
+{
     font-size: 20px;
 }
-:where(article, header) p{
-    background-color: red !important; 
+/* article p, header p */
+:where(article, header) p
+{
+    background-color: gray !important;
 }
 /* Pseudo Element */
 /* Reconnaissable à la syntaxe suivante "::pseudoElement" */
-article p::first-letter{
+/* Modifie la première lettre */
+article p::first-letter
+{
     font-size: 50px;
 }
-main > p::first-line{
+/* modifie la première ligne */
+main > p::first-line
+{
     font-weight: bold;
 }
-h1::before{
+/* Crée un élément au début du h1 */
+h1::before
+{
+    /* La propriété content est obligatoire sur un before ou un after */
     content: "C'est faux ->";
 }
-h1::after{
+/* Crée un élément à la fin du h1 */
+h1::after
+{
     content: "<- Il ment !";
 }
 /* Les classes, id et autres attributs */
-#MenuImportant{
+/* selectionne l'élément d'id "MenuImportant" */
+
+#MenuImportant
+{
     font-size: 42px;
     font-weight: bold;
     color: red;
 }
-.peuImportant{
+/* selectionne tous les éléments avec la classe "peuImportant" */
+.peuImportant
+{
     font-size: 8px;
     font-weight: 100;
     color: gainsboro;
 }
-a[target]{
+/* Tous a qui possède un attribut "target" */
+a[target]
+{
     font-style: italic;
 }
-a[href*="amazon"]{
+/* tous a dont l'attribut href contient le mot "amazon" */
+a[href*="amazon"]
+{
     font-family: monospace;
 }
-a[href$=".fr"]{
+/* tous a dont l'attribut href se termine par ".fr" */
+a[href$=".fr"]
+{
     background-color: blue;
 }
-a[href^="http"]::before{
+/* tous a dont l'attribut href commence par "https" */
+a[href^="https"]::before
+{
     content: "✓";
 }
-li:nth-child(1){
+/* priorité et spécifique */
+/* 
+    La priorité spécifique des selecteurs est représenté par 3 chiffres
+        (0,0,1)
+    Chaque chiffre à la priorité sur le suivant :
+        1,0,0 aura la priorité sur 0,18,9
+        0,1,0 aura la priorité sur 0,0,5
+        0,0,3, aura la priorité sur 0,0,1
+    Ces chiffres sont définies par les selecteurs:
+        Une balise (div, main...) fera évoluer le dernier chiffre.
+            main > p vaudra 0,0,2
+        Une classe, ou pseudo-classe fera évolué le second chiffre.
+            div.classeCool vaudra 0,1,1
+        Un id fera évoluer le premier chiffre
+            div#idImportant vaudra 1,0,1
+*/
+li:nth-child(1)
+{
     color: gold;
 }

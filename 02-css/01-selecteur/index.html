@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les Selecteurs CSS</title>
+    <style>
+        h1{
+        background-color: yellow;
+        }
+
+    </style>
     <link rel="stylesheet" href="style.css">
   
 </head>
 <body>
-    <header>
-        <h1><a href="https://www.google.fr/search?q=carbonnade" target="_blank">
-            Super Site Grandiose</a></h1>
+    <!-- header>(h1>a>{Super Site Grandiose})+p>{Ce site est vraiment super} -->
+    <header style="background-color: green;">
+        <h1>
+            <a href="https://www.google.fr/search?q=carbonnade" target="_blank">
+                Super Site Grandiose
+            </a>
+        </h1>
         <p>
             Ce site est vraiment super
         </p>
@@ -18,6 +28,7 @@
             second p 
         </p>
     </header>
+    <!-- main>(p>lorem5+(span*3>lorem8)+lorem10)+article>(h2>{super article})+p>{gros article très long} -->
     <main>
         <p>
             <span>Lorem ipsum, dolor,</span>  sit amet consectetur adipisicing elit. Inventore ullam repellendus corrupti odio dolorum exercitationem! Libero exercitationem totam rem beatae ab consequuntur aliquid culpa, veniam error repellat quis, obcaecati maxime.<span></span><span></span><span></span></p>
@@ -28,6 +39,7 @@
             <p>gros article très long</p>
         </article>
     </main>
+        <!-- footer>(h3>{Gros Menu})+ul>li*6>{Menu $} -->
     <footer>
         <h3>Gros Menu</h3>
         <ul>
