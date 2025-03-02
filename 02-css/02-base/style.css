@@ -1,7 +1,7 @@
 /* permet d'importer une police d'écriture */
 @font-face {
     /* nom que l'on donne à notre police */
-    font-family: Playwrite;
+    font-family: DancingScript;
     /* chemin vers le fichier de la police */
     src: url(./DancingScript-VariableFont_wght.ttf);
 }
