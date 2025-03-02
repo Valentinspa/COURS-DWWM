@@ -6,57 +6,93 @@
     <title>Balises de base</title>
 </head>
 <body>
+    <!-- Balises block sémantiques. Aucun effet -->
     <header id="HautDePage"></header>
     <footer></footer>
     <nav></nav>
+    <!-- Balise block par défaut. -->
     <div></div>
-    <main></main>
+    <!-- Ne devrait apparaître qu'une fois dans la page -->
+    <main>Main</main>
+    <!-- h$*6>{Titre $}
+    Balise de titre, du 1 le plus important, au 6.
+    Possède une marge en haut et en bas, change la taille du texte et le met en gras.
+    L'ordre d'importance des titres doit être respecté -->
     <h1>Titre 1</h1>
     <h2>Titre 2</h2>
     <h3>Titre 3</h3>
     <h4>Titre 4</h4>
     <h5>Titre 5</h5>
     <h6>Titre 6</h6>
+    <!-- Balises sémantiques qui devrait contenir un titre -->
     <section>
         <h2>Ma section</h2>
     </section>
     <article>
         <h3>Mon article</h3>
     </article>
+    <!-- Unordered List, ne peut contenir que des balises "li" -->
     <ul>
+        <!-- list item, ne peut être contenu que dans un ul, ol ou menu (li*3>{item $})-->
         <li>item 1</li>
         <li>item 2</li>
         <li>item 3</li>
     </ul>
+    <!-- Pareil qu'un ul, mais avec un nom différent -->
     <menu>
        <li>item 1</li>
         <li>item 2</li>
         <li>item 3</li>
     </menu>
+    <!-- Ordered list, affiche les éléments précédé d'un chiffre.
+    ol>li*3>{item $} -->
     <ol>
         <li>item 1</li>
         <li>item 2</li>
         <li>item 3</li>
     </ol>
+        <!-- paragraphe, il ne peut contenir que du texte ou des éléments inline -->
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum atque hic dignissimos impedit quo repellendus assumenda molestias facere harum animi? Recusandae voluptate nesciunt impedit quam debitis error sunt molestias ipsam.</p>
-    <pre>
+        <!-- preformate permet de garder le formatage du document, saut à la ligne, espace... -->
+     <pre>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum atque hic dignissimos impedit quo repellendus assumenda molestias facere harum animi? Recusandae voluptate nesciunt impedit quam debitis error sunt molestias ipsam.
     </pre>
-    <a href="./index.html">index</a>
+        <!-- les balises d'ancre, permettent de créer des liens cliquable. -->
+    <a href="./index.html">index</a>    
+    <!-- target blank permet d'ouvrir le lien dans un nouvel onglet -->
     <a href="https://www.google.fr/search?q=burger" target="_blank">google</a>
+    <!-- un # suivi du nom d'un id permet un lien interne à la page -->
     <a href="#HautDePage">haut de page</a>
-    <hr>
-    <p><strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</strong> <br> Tenetur dolorum beatae officia soluta voluptate.<br> <b>Ab quisquam iure voluptates distinctio placeat recusandae quam ea, ipsam delectus sapiente eum cum porro ut!</b></p>
-    <em>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur ullam, quis repudiandae quisquam nemo, cumque labore nam fugiat architecto molestias est nisi vel? Sapiente, quo soluta nostrum fugiat exercitationem temporibus!</em>
-    <br>
-    <i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, quas placeat voluptate, eveniet maxime magni ad laboriosam assumenda reprehenderit nobis nemo! Illum quas est quos nam incidunt ex consequatur dicta.</i>
-    <br>
-    <abbr title="Hyper Text Markup Language"><HTML></HTML></abbr>
-    <img src="./logo-html.png" alt="logo html" width="250">
-    <video src="" width="500" controls autoplay muted loop poster="logo-html.png"></video>
-    <audio src=""></audio>
-    <iframe src="./02-formulaire.html" frameborder="0"></iframe>
-    <span class="maClasse ma-seconde-classe"></span>
-    
+        <!-- Crée une ligne séparatrice -->
+     <hr>
+    <p>
+        <!-- strong indique l'importance d'un texte -->
+        <strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</strong>
+        <!-- saut à la ligne -->
+        <br>
+        <!-- b est utilisé pour attiré l'attention sur un texte -->
+        <b>Ab quisquam iure voluptates distinctio placeat recusandae quam ea, ipsam delectus sapiente eum cum porro ut!</b>
+        <!-- u pour faire ressortir un texte comme un nom propre ou une erreur -->
+         <u>Lorem ipsum dolor sit amet consectetur adipisicing elit.</u>
+        <!-- em permet de mettre l'emphase sur du texte  -->
+        <em>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur ullam, quis repudiandae quisquam nemo, cumque labore nam fugiat architecto molestias est nisi vel? Sapiente, quo soluta nostrum fugiat exercitationem temporibus!</em>
+        <br>
+        <!-- i permet de faire ressortir une citation -->
+        <i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, quas placeat voluptate, eveniet maxime magni ad laboriosam assumenda reprehenderit nobis nemo! Illum quas est quos nam incidunt ex consequatur dicta.</i>
+        <br>
+        <!-- abbr marque une abréviation, title (qui peut être utilisé n'importe où) permet une info bulle au survol -->
+        <abbr title="Hyper Text Markup Language">Html</abbr>
+        <!-- insérer une image -->
+        <img src="./logo-html.png" alt="logo html" width="250">
+        <!-- insérer une vidéo -->
+        <video src="" width="500" controls autoplay muted loop poster="logo-html.png"></video>
+        <!-- insérer un audio -->
+        <audio src=""></audio>
+        <!-- Insérer une autre page internet -->
+        <iframe src="./02-formulaire.html" frameborder="0"></iframe>
+        <!-- balise inline sans aucun effet ou règle -->
+        <span class="maClasse ma-seconde-classe"></span>
+        <!-- la classe permet d'identifier un élément, mais à la différence de l'id, on peut avoir plusieurs classes séparés d'un espace, et une même classe peut être appliqué à plusieurs éléments. -->
+    </p>
 </body>
 </html>

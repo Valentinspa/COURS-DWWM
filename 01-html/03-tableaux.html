@@ -13,34 +13,49 @@
     </style>
 </head>
 <body>
+    <!-- un tableau -->
     <table>
+        <!-- une rangée d'un tableau -->
         <tr>
+            <!-- Une case d'un tableau -->
             <td>pomme</td>
             <td>cerise</td>
         </tr>
         <tr>
+            <!-- Chaque rangée d'un tableau, doit avoir le même nombre de case -->
             <td>banane</td>
             <td>tomate</td>
         </tr>
     </table>
+    <!-- tableau plus poussé -->
     <table>
+        <!-- l'entête du tableau -->
        <thead>
             <tr>
+                <!-- titre des colonnes -->
                 <th colspan="2">Fruit</th>
+                <!-- colspan permet de fusionner des colonnes -->
                 <th colspan="2">Légume</th>
             </tr>
         </thead>
+        <!-- corps du tableau -->
         <tbody>
             <tr>
                 <td>banane</td>
                 <td>cerise</td>
                 <td>carotte</td>
+                <!-- fusionne des rangées -->
                 <td rowspan="2"> courgette</td>
             </tr>
+            <tr>
+                <td>pomme</td>
+                <td colspan="2">tomate</td>
+            </tr>
         </tbody>
+        <!-- pied du tableau -->
         <tfoot>
             <tr>
-                <td colspan="2">tomate</td>
+                <td colspan="4">Mangez 5 fruits et légumes par jour</td>
             </tr>
         </tfoot>
     </table>

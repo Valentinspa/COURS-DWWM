@@ -1,65 +1,92 @@
-*, ::before, ::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header{
+header
+{
     background-color: aqua;
     /* Ajoute une image en fond */
-    background-image: url(../images4.jpg);
-    /* Indique la taille de l'image, contain permet que l'image
-     soit contenu dans l'élément html, cover qu'elle couvre entièrement
-      celui ci */
+    background-image: url(./images.jpg);
+    /* Indique la taille de l'image, contain permet que l'image soit contenu dans l'élément html, cover qu'elle couvre entièrement celui ci */
     background-size: cover;
     /* Empêche l'image de se répéter */
     background-repeat: no-repeat;
-    /* Indique la position de l'image de fond en contain, elle positionne
-     l'image dans l'élément html, en cover, 
-     elle indique quelle partie de l'image est visible  */
-     background-position: bottom;
+    /* Indique la position de l'image de fond
+    en contain, elle positionne l'image dans l'élément HTML, en cover, elle indique quelle partie de l'image est visible */
+    background-position: bottom;
 }
-footer{
-  background: red url(../images2.jpg) center / contain no-repeat;
+footer
+{
+    /* résume toute les propriétés de background */
+    background: red url(./pexels-pixabay-38547.jpg) center / contain no-repeat;
 }
-article{
-  width: 49%;
-  display: inline-block;
-  border: 5px solid black;
-  padding-top: 5px;
-  padding-right:10px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  margin: 20px auto 20px 5px;
-  box-shadow: 5px 5px 2px 1px red;
+article
+{
+    /* largeur de l'élément */
+    width: 49%;
+    /* Défini le display de l'élément (block, inline, inline-block... */
+    display: inline-block;
+    /* 
+        border-color / border-style / border-width
+        Crée une bordure autour de l'élément
+    */
+    border: 5px solid black;
+    /* * génère une marge entre la bordure et le contenu */
+    /* padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px; */
+    /* * top right bottom left */
+    /* padding: 5px 10px 5px 10px; */
+    /* * top-bottom left-right */
+    padding: 5px 10px;
+    /* ajoute une marge à l'exterieur des éléments */
+    margin: 20px auto 20px 5px;
+    /* Crée une ombre autour de l'élément,
+    Elle doit prendre au moins 2 tailles pour le décalage horizontal et vertical, et une couleur.
+    On pourra lui ajouter jusqu'à deux autres tailles, pour le flou et le spread.
+    Le mot clef "inset" permet que l'ombre soit à l'interieur de l'élément */
+    box-shadow: 5px 5px 2px 1px red;
 }
-h1{
-  font-size: 42px;
-  text-align: center;
-  padding: .8em .1em;
-  color: antiquewhite;
-  text-shadow: 3px 3px 5px goldenrod;
+h1
+{
+    font-size: 42px;
+    /* alignement du texte */
+    text-align: center;
+    /* équivaut à 0.8em 0.1em */
+    padding: .8em .1em;
+    color: antiquewhite;
+    /* Fonctionne comme box-shadow mais sans spread et inset */
+    text-shadow: 3px 3px 5px goldenrod;
 }
-li{
-  display: inline-block;
-  background-color: aqua;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  padding: 1em 5px;
-  margin-left: 15%;
+li
+{
+    display: inline-block;
+    background-color: aqua;
+    /* change la hauteur par rapport à la largeur. */
+    aspect-ratio: 1/1;
+    /* Arrondi les angles */
+    border-radius: 50%;
+    padding: 1em 5px;
+    margin-left: 15%;
 }
-div{
-  width: 40vw;
-  min-width: 200px;
-  max-width: 700px;
-  max-height: 90vh;
-  margin : 5px auto;
+div
+{
+    width: 40vw;
+    min-width: 200px;
+    max-width: 700px;
+    max-height: 90vh;
+    margin: 5px auto;
 }
-img{
- width: 100%;
- height: 20vh;
- /* Fonctionne comme background-size mais adapté à une balise image */
- object-fit: cover;
- /* fonctionne comme background-position mais adapté aux balises image */
- object-position: bottom;
+img
+{
+    width: 100%;
+    height: 20vh;
+    /* Fonctionne comme background-size mais adapté à une balise image */
+    object-fit: cover;
+    /* fonctionne comme background-position mais adapté aux balises image */
+    object-position: bottom;
 }

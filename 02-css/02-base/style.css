@@ -3,7 +3,7 @@
     /* nom que l'on donne à notre police */
     font-family: Playwrite;
     /* chemin vers le fichier de la police */
-    src: url(./PlaywriteITModerna-VariableFont_wght.ttf);
+    src: url(./DancingScript-VariableFont_wght.ttf);
 }
 /* le selecteur root correspond à la racine du site, généralement la balise html */
 :root
