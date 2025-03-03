@@ -1,0 +1,116 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 400vh;
+}
+header{
+    padding: 1rem;
+    background-color: slategray;
+    color: antiquewhite;
+    text-align: center;
+    /* En position fixed, l'élement sort du flow de la page, sa largeur devient égale à son contenu, et l'élément se déplace avec le scrolling */
+    position: fixed;
+    width: 100%;
+    /* 
+        z-index ne fonctionne que sur élément positionné.
+        Il joue sur la profondeur de l'élément.
+        Tout élément est par defaut à 0, un nombre positif, fera passer
+        l'élément devant, un négatif, derrière.
+    */
+    z-index: 1;
+}
+nav, main {
+    margin-top: 50px;
+    display: inline-block;
+    height: 100%;
+    padding: 2rem;
+}
+nav{
+    width: 200px;
+    /* 
+    linear-gradient prend au moins 2 couleurs, jusqu'à autant qu'on le souhaite,
+    et crée une image qui est un dégradé de ces couleurs.
+    on peut ajouté un premier paramètre qui est soit un mot clef 
+    (to bottom, to left...) soit une valeur en degré(45deg...) pour tourner le dégradé.
+    On peut faire suivre la couleur d'un pourcentage pour indiquer à partir de quand le
+    dégradé doit commencer.
+    */
+    background-image: linear-gradient(90deg, blue 33%, white 33%, white 66%, red 66%);
+}
+nav ul {
+    /* 
+    La position sticky, garde l'élémment dans le flux de la page,
+    jusqu'à la position indiquée soit atteinte (ici top: 70px)
+    Une fois la position atteinte, l'élément suivra le scrolling,
+    tant qu'il peut rester dans son parent(ici la nav)
+    */
+    position: sticky;
+    /* 
+    Les propriétés top, left, right, boottom, ne fonctionne que sur un élément positionné.
+    Elles agissent différemment selon la position.
+    Il existe un propriété résumé de ces 4 là, nommé "inset".
+    */
+    top: 70px;
+}
+main{
+    /* 
+    La foncction calc permet de faire des calculs en CSS.
+    ! Chaque élément doit être séparé par un espace.
+    */
+    width:calc(100% - 205px);
+    /* 
+    radial-gradient fonctionnera comme linear-gradient si ce n'est qu'il va 
+    créer une forme circulaire. Par défaut la forme sera plutôt ovale, mais
+    on peut lui préciser qu'on veutun cercle ert à
+    quel position ce cercle doit commencer.
+    */
+    background-image: radial-gradient(circle at 50%, red 20%, width 20%);
+    /* 
+    La position relative, permet de déplacer un élément par rapport
+    à sa position d'origine.
+    Son emplacement d'origine est toujours gardé dans le flux de la page,
+    donc aucun élément ne viendra le remplacer.
+     */
+    position: relative;
+    top: 100px;
+}
+main p:last-child{
+
+min-height: 300px;
+background-image: conic-gradient(green, purple, green);
+}
+button{
+    /* 
+    l'élément est sortie du flux de la page.
+    Il prent la taille de son contenu.
+    Si un posittionnement (top, left...) lui est précisé.
+    Il vient se positionner, par rapport à son parent positionné le plus proche.
+    */
+     position: absolute;
+     /*right: 0;
+     top: 0;*/
+     top: 50%;
+     left: 50%;
+     /*transform: translate(-50%, 50%); rotate(45deg); */
+     translate: -50% -50%;
+     rotate: 45deg;
+}
+img{
+    width: 200px;
+    /* 
+    float sort l'élément de son flux habituel,
+    pour le replacer ailleurs dans le flux de son parent.
+    Il n'est pas possible d'être précis, on indique généralement
+    "right" ou "left".
+     */
+    float: left;
+    border-radius: 50%;
+    /* 
+    Permet que le texte s'adapte à la forme de l'élément.
+    */
+    shape-outside: margin-box;
+    margin: 10px;
+}

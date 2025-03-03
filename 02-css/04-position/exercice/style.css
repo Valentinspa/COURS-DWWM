@@ -1,0 +1,31 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-image: linear-gradient(to right,#904E95, #E96443);
+    
+    
+    
+}
+div{
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+    bottom:50%;
+    right: 50%;
+}
+.circle1{
+    transform: translate(0, -35%);
+}
+.circle2{
+    transform: translate(0, 35%);
+}
+.circle3{
+    transform: translate(0, );
+}
