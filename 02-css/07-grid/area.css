@@ -1,0 +1,41 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    height: 100vh;
+    /* Si plusieurs unité fr sont indiquées?,
+    Elle se partagerons l'éspace restant telle des fractions.
+    Ici j'ai 1 + 3 + 1 = 5
+    Donc la première et la troisième ligne prendrons 1/5ème de l'espace restant 
+    Et la seconde 3/5ème.  
+    */
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas: 
+    "header header header header header header"
+    "menu article article article chausette chausette"
+    "menu footer footer footer footer footer";
+    gap: 5px;
+}
+.item1 {
+    background-color: blue;
+    grid-area: header;
+}
+.item2{
+    background-color: red;
+    grid-area: menu;
+}
+.item3{
+    background-color: yellow;
+    grid-area: article;
+}
+.item4{
+    background-color: green;
+    grid-area: chausette;
+}
+.item5{
+    background-color: coral;
+    grid-area: footer;
+}

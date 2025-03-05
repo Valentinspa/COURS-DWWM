@@ -1,0 +1,76 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul
+{
+    /* 
+        Le display flex permet de déplacer les éléments enfant de façon flexible.
+        C'est à dire qu'ils vont s'adapter à la taille du parent.
+    */
+    display: flex;
+    /* 
+        Le display flex fonctionne selon un axe principal et un secondaire.
+        Le principal est choisi avec flex-direction
+    */
+    flex-direction: row;
+    height: 25vh;
+    /* 
+        justify-content permet de placer les éléments enfant sur l'axe principal.
+        On peut les placer au début, à la fin ou au centre mais aussi, les espacer avec space-****
+    */
+    justify-content: space-between;
+    /* 
+        Lorsque les éléments n'ont plus de place, plutôt que de se compacter, ils vont créer de nouvelles lignes.
+    */
+    flex-wrap: wrap;
+    /* 
+        Choisi la position des éléments sur l'axe secondaire
+    */
+    align-items: center;
+    border: 1px solid black;
+}
+li
+{
+    width: 40vw;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: aquamarine;
+    margin: 5px;
+    list-style: none;
+    text-align: center;
+}
+li:hover
+{
+    /* 
+        Indique l'espace que doit prendre l'élément,
+        si il est seul à avoir un flex-grow, il prendra tout l'espace restant
+    */
+    flex-grow: 1;
+}
+section
+{
+    height: 200px;
+    display: flex;
+    /* fusion de flex-direction et flex-wrap */
+    flex-flow: column wrap;
+    /* Permet d'espacer les éléments */
+    gap: 20px;
+}
+article
+{
+    width: 40%;
+    background-color: chartreuse;
+}
+article:last-child
+{
+    background-color: goldenrod;
+    /* 
+        Permet de déplacer un élément par rapport aux autres.
+        Chaque élément à par défaut un ordre de "0", il suit l'ordre du HTML.
+        En indiquant une valeur négative, il va se placer avant les autres, avec une positive, il ira après.
+    */
+    order: -1;
+}
