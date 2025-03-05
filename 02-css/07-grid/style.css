@@ -31,30 +31,35 @@ main{
 }
 main > div:nth-child(1){
     background-color: lightgreen;
+    /* Indique à quelle colonne l'élément commence */
     grid-column-start: 2;
+    /* Indique à quelle colonne (non comprise) l'élément termine */
     grid-column-end: 5;
+    /* De même pour les rangées */
     grid-row-start: 1;
     grid-row-end: 3;
 }
 main> div:nth-child(2){
     background-color: lightblue;
+    /* version résumé de grid-column-start / grid-column-end */
     grid-column: 1/2;
+    /* De même pour les rows */
     grid-row: 1/3;
 }
 main> div:nth-child(3){
     background-color: lightcoral;
+    /* row-start / column-start / row-end / column-end */
     grid-area: 1/5/4/6;
 }
 main> div:nth-child(4){
     background-color: lightseagreen;
+    /* span permet d'indiquer un nombre de case plutôt qu'une colonne/row de fin */
     grid-row: 3/ span 2;
     grid-column: 1/ span 2;
 }
 main> div:nth-child(5){
     background-color: lightgoldenrodyellow;
+    /* Volontairement, ou non, nous pouvons empiler les éléments sur les même cases */
     grid-row: 2/ span 2;
     grid-column: 2/ span 2;
-}
-main> div:nth-child(6){
-
 }
