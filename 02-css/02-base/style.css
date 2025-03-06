@@ -1,91 +1,82 @@
 /* permet d'importer une police d'écriture */
 @font-face {
-    /* nom que l'on donne à notre police */
-    font-family: DancingScript;
-    /* chemin vers le fichier de la police */
-    src: url(./DancingScript-VariableFont_wght.ttf);
+  /* nom que l'on donne à notre police */
+  font-family: DancingScript;
+  /* chemin vers le fichier de la police */
+  src: url(./DancingScript-VariableFont_wght.ttf);
 }
 /* le selecteur root correspond à la racine du site, généralement la balise html */
-:root
-{
-    /* 
+:root {
+  /* 
         Les variables CSS, permettent de créer un nom précédé de "--" qui contiendra une valeur, couleur, taille ou autre 
         Cette valeur sera réutilisable où l'on souhaite dans le reste du CSS.
     */
-    --main-background-color: blue;
-    --chaussette: green;
-    --divTextSize: 30px;
-    font-size: 8px;
+  --main-background-color: blue;
+  --chaussette: green;
+  --divTextSize: 30px;
+  font-size: 8px;
 }
-.target1
-{
-    /* Pour utiliser une variable, je dois appeler la fonction "var()" et mettre le nom de la variable que l'on souhaite appeler entre parenthèse. */
-    font-size: var(--divTextSize);
-    font-family: 'Courier New', Courier, monospace;
-    /* La fonction rgb prend 3 valeurs allant de 0 à 255 représentant les niveaux de rouge, vert et bleu */
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+.target1 {
+  /* Pour utiliser une variable, je dois appeler la fonction "var()" et mettre le nom de la variable que l'on souhaite appeler entre parenthèse. */
+  font-size: var(--divTextSize);
+  font-family: "Courier New", Courier, monospace;
+  /* La fonction rgb prend 3 valeurs allant de 0 à 255 représentant les niveaux de rouge, vert et bleu */
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
-.target2
-{
-    font-size: var(--divTextSize);
-    font-family: Playwrite;
-    background-color: rgb(26, 143, 104);
-    /* rgba prend un quatrième paramètre qui correspond au niveau de transparence (de 0 à 1) */
-    color: rgba(0,0,0,0.5);
+.target2 {
+  font-size: var(--divTextSize);
+  font-family: Playwrite;
+  background-color: rgb(26, 143, 104);
+  /* rgba prend un quatrième paramètre qui correspond au niveau de transparence (de 0 à 1) */
+  color: rgba(0, 0, 0, 0.5);
 }
-.target3
-{
-    /* L'hexadecimal commence par un "#" puis prend 3 paires de chiffres allant de 0 à F pour les couleurs rouge, vert, bleu */
-    background-color: #000000;
-    color: #FFFFFF;
-    /* Deux fois la taille hérité du parent */
-    font-size: 2em;
+.target3 {
+  /* L'hexadecimal commence par un "#" puis prend 3 paires de chiffres allant de 0 à F pour les couleurs rouge, vert, bleu */
+  background-color: #000000;
+  color: #ffffff;
+  /* Deux fois la taille hérité du parent */
+  font-size: 2em;
 }
-.target4
-{
-    background-color: #30c944;
-    /* On peut ajouter une paire de chiffre pour gérer la transparence */
-    color: #00000080;
-    /* Deux fois la taille hérité de la racine */
-    font-size: 2rem;
+.target4 {
+  background-color: #30c944;
+  /* On peut ajouter une paire de chiffre pour gérer la transparence */
+  color: #00000080;
+  /* Deux fois la taille hérité de la racine */
+  font-size: 2rem;
 }
-body{font-size: 20px;}
-.target5
-{
-    /* hsl prend 3 valeurs,
+body {
+  font-size: 20px;
+}
+.target5 {
+  /* hsl prend 3 valeurs,
     la première correspond à des degrés sur une rouge chromatique
     le second correspond à la saturation de la couleur
     Le troisième à la brillance de la couleur */
-    background-color: hsl(0, 0%, 0%);
-    color: hsl(360, 100%, 100%);
-    /* viewport width, 5% de la largeur du viewport */
-    font-size: 5vw;
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(360, 100%, 100%);
+  /* viewport width, 5% de la largeur du viewport */
+  font-size: 5vw;
 }
-.target6
-{
-    background-color: hsl(288, 61%, 31%);
-    /* prend une quatrième valeur avec le niveau de transparence */
-    color: hsla(0, 0%, 0%, 0.5);
-    /* viewport height, 10% de la hauteur du viewport */
-    font-size: 10vh;
+.target6 {
+  background-color: hsl(288, 61%, 31%);
+  /* prend une quatrième valeur avec le niveau de transparence */
+  color: hsla(0, 0%, 0%, 0.5);
+  /* viewport height, 10% de la hauteur du viewport */
+  font-size: 10vh;
 }
-.target7
-{
-    /* viewport max, 5% de l'axe le plus grand, (si la largeur est plus grande que la hauteur, alors c'est 5% de la largeur), il existe aussi vmin */
-    font-size: 5vmax;
+.target7 {
+  /* viewport max, 5% de l'axe le plus grand, (si la largeur est plus grande que la hauteur, alors c'est 5% de la largeur), il existe aussi vmin */
+  font-size: 5vmax;
 }
-.target8
-{
-    /* Un pourcentage du parent */
-    font-size: 50%;
+.target8 {
+  /* Un pourcentage du parent */
+  font-size: 50%;
 }
-.target9
-{
-    /* La fonction clamp permet d'adapter la taille de la police en indiquant un minimum et un maximum */
-    font-size: clamp(16px, 5vw, 30px);
+.target9 {
+  /* La fonction clamp permet d'adapter la taille de la police en indiquant un minimum et un maximum */
+  font-size: clamp(16px, 5vw, 30px);
 }
-.target10
-{
-    font-size: 1cm;
+.target10 {
+  font-size: 1cm;
 }

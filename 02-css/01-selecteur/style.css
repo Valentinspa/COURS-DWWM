@@ -1,141 +1,116 @@
-h1
-{
-    background-color: aqua;
+h1 {
+  background-color: aqua;
 }
 /* Enfant Direct ou Indirect */
 /* Selectionne tout p dans un main */
-main p
-{
-    background-color: lightsalmon;
+main p {
+  background-color: lightsalmon;
 }
 /* Selectionne tout p, directement enfant du main, sans autre balise les séparants */
-main > p
-{
-    background-color: olive;
+main > p {
+  background-color: olive;
 }
 /* Frère direct ou indirect */
 /* Selectionne tous les p suivant un h1 */
-h1 ~ p
-{
-    background-color: burlywood;
+h1 ~ p {
+  background-color: burlywood;
 }
 /* Selectionne tout p juste après un h1 */
-h1 + p
-{
-    background-color: crimson;
+h1 + p {
+  background-color: crimson;
 }
 /* Les pseudo classes */
 /* Elles se reconnaissent à la syntaxe suivante ":nomPseudoClasse" */
 /* Au survol de l'élément */
-li:hover
-{
-    background-color: chartreuse;
+li:hover {
+  background-color: chartreuse;
 }
 /* selectionne le second enfant, si c'est un p */
-header p:nth-child(2)
-{
-    color: skyblue;
+header p:nth-child(2) {
+  color: skyblue;
 }
 /* Selectionne le second p enfant de header */
-header p:nth-of-type(2)
-{
-    color: peachpuff;
+header p:nth-of-type(2) {
+  color: peachpuff;
 }
 /* Existe aussi en comptant depuis la fin, avec nth-last-child() et nth-last-of-type() */
 /* Les balises a n'héritent pas des propriétés de couleur de leurs parents, il faut les cibler directement */
-h1 a
-{
-    color: red;
+h1 a {
+  color: red;
 }
 /* couleur du lien si visité */
-h1 a:visited
-{
-    color: gold;
+h1 a:visited {
+  color: gold;
 }
 /* couleur du lien quand on clique dessus */
-h1 a:active
-{
-    color: darkmagenta;
+h1 a:active {
+  color: darkmagenta;
 }
 /* Couleur du lien quand il a le focus */
-h1 a:focus
-{
-    color: steelblue;
+h1 a:focus {
+  color: steelblue;
 }
 /* tous les span dans un p, sauf le second */
-p span:not(:nth-child(2))
-{
-    color: magenta;
+p span:not(:nth-child(2)) {
+  color: magenta;
 }
 /* toute les balises, sauf h1 et a */
 /* h1{ font-size: 5px;} */
-*:not(h1, a)
-{
-    font-size: 20px;
+*:not(h1, a) {
+  font-size: 20px;
 }
 /* article p, header p */
-:where(article, header) p
-{
-    background-color: gray !important;
+:where(article, header) p {
+  background-color: gray !important;
 }
 /* Pseudo Element */
 /* Reconnaissable à la syntaxe suivante "::pseudoElement" */
 /* Modifie la première lettre */
-article p::first-letter
-{
-    font-size: 50px;
+article p::first-letter {
+  font-size: 50px;
 }
 /* modifie la première ligne */
-main > p::first-line
-{
-    font-weight: bold;
+main > p::first-line {
+  font-weight: bold;
 }
 /* Crée un élément au début du h1 */
-h1::before
-{
-    /* La propriété content est obligatoire sur un before ou un after */
-    content: "C'est faux ->";
+h1::before {
+  /* La propriété content est obligatoire sur un before ou un after */
+  content: "C'est faux ->";
 }
 /* Crée un élément à la fin du h1 */
-h1::after
-{
-    content: "<- Il ment !";
+h1::after {
+  content: "<- Il ment !";
 }
 /* Les classes, id et autres attributs */
 /* selectionne l'élément d'id "MenuImportant" */
 
-#MenuImportant
-{
-    font-size: 42px;
-    font-weight: bold;
-    color: red;
+#MenuImportant {
+  font-size: 42px;
+  font-weight: bold;
+  color: red;
 }
 /* selectionne tous les éléments avec la classe "peuImportant" */
-.peuImportant
-{
-    font-size: 8px;
-    font-weight: 100;
-    color: gainsboro;
+.peuImportant {
+  font-size: 8px;
+  font-weight: 100;
+  color: gainsboro;
 }
 /* Tous a qui possède un attribut "target" */
-a[target]
-{
-    font-style: italic;
+a[target] {
+  font-style: italic;
 }
 /* tous a dont l'attribut href contient le mot "amazon" */
-a[href*="amazon"]
-{
-    font-family: monospace;
+a[href*="amazon"] {
+  font-family: monospace;
 }
 /* tous a dont l'attribut href se termine par ".fr" */
-a[href$=".fr"]
-{
-    background-color: blue;
+a[href$=".fr"] {
+  background-color: blue;
 }
 /* tous a dont l'attribut href commence par "https" */
-a[href^="https"]::before
-{
-    content: "✓";
+a[href^="https"]::before {
+  content: "✓";
 }
 /* priorité et spécifique */
 /* 
@@ -153,7 +128,6 @@ a[href^="https"]::before
         Un id fera évoluer le premier chiffre
             div#idImportant vaudra 1,0,1
 */
-li:nth-child(1)
-{
-    color: gold;
+li:nth-child(1) {
+  color: gold;
 }

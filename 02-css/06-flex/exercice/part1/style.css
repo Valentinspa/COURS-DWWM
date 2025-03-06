@@ -1,58 +1,55 @@
-*, ::before, ::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#div1{
-    background-color: aqua;
+#div1 {
+  background-color: aqua;
 }
-#div2{
-    background-color: chartreuse;
+#div2 {
+  background-color: chartreuse;
 }
-#div3{
-    background-color: coral;
+#div3 {
+  background-color: coral;
 }
-#div4{
-    background-color: magenta;
+#div4 {
+  background-color: magenta;
 }
-#div5{
-    background-color: blue;   
+#div5 {
+  background-color: blue;
 }
-#div6{
-    background-color: yellow;
+#div6 {
+  background-color: yellow;
 }
-#div7{
-    background-color:saddlebrown;
+#div7 {
+  background-color: saddlebrown;
 }
-#div8{
-    background-color: darkgray;
+#div8 {
+  background-color: darkgray;
 }
-.conteneur{
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    flex-flow: row wrap;
+.conteneur {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-flow: row wrap;
 }
 
-@media screen and (max-width: 768px){
-    .rectangle{
-        width:50%;
-        border: 5px solid aqua;
-
-    }
-  
+@media screen and (max-width: 768px) {
+  .rectangle {
+    width: 50%;
+    border: 5px solid aqua;
+  }
 }
-@media screen and (max-width:1023px)and (min-width:768px) {
-
-    .rectangle{
-        width : 25%;
-    }
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .rectangle {
+    width: 25%;
+  }
 }
-@media screen and (min-width:1024px){
-    .rectangle{
-        width: 12.5%;
-    }
+@media screen and (min-width: 1024px) {
+  .rectangle {
+    width: 12.5%;
+  }
 }
-    
-    

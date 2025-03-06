@@ -1,0 +1,52 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+li {
+  margin: 50px;
+}
+button {
+  height: 40px;
+  width: 120px;
+}
+li:nth-child(1) button {
+  background-color: rgb(192, 192, 192);
+  color: grey;
+  transition-duration: 2s;
+  border: 2px solid grey;
+}
+li:nth-child(1) button:hover {
+  background-color: rgb(255, 153, 153);
+  border-color: red;
+  color: red;
+  transform: rotateY(360deg);
+  cursor: pointer;
+  transition-property: left;
+}
+li:nth-child(2) button {
+  color: white;
+  background-color: palevioletred;
+  border: 2px solid palevioletred;
+  border-radius: 10px;
+  box-shadow: 5px 5px 3px grey;
+  cursor: pointer;
+  transition-property: transform;
+  transition-duration: 2s;
+}
+
+li:nth-child(2) button:hover {
+  translate: 1.5px 1.5px;
+  border: 5px solid palevioletred;
+}
+li:nth-child(2) button:active {
+  transition: none;
+  padding: 10px 20px;
+  transform: rotateX(360deg);
+  scale: 360deg;
+}
