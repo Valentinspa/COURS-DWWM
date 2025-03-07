@@ -1,0 +1,156 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+.sky {
+  height: 100%;
+  background: linear-gradient(to right, #904e95, #e96443);
+}
+.cloud {
+  position: absolute;
+  top: 50%;
+  /* left: 50%; */
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  /* (obligatoire) Peremt d'indquer le nom de keyframe a lancer */
+  animation-name: cloud;
+  /* (obligatoire) Indique la durée de l'animation */
+  animation-duration: 10s;
+  /* Indique si l'animation doit se jouer normalement, en sens inverse ou alterner */
+  animation-direction: normal;
+  /* Indique le nombre de fois que doit se jouer l'animation (1 à infinite) */
+  animation-iteration-count: 5;
+  /* Indique si une fois l'animation terminée, elle reprend son état d'origine, reste sur la dernière ou première étape de l'animation*/
+  animation-fill-mode: forwards;
+  /* rythme auquel se joue l'animation (comme les transitions) */
+  animation-timing-function: ease-in-out;
+  /* ajoute un delai avant le début de l'animation */
+  animation-delay: 0.2s;
+}
+.cloud div {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  /* animation est la propriété resumé de toutes les propriétés d'animation */
+  animation: darkcloud 5s linear infinite;
+}
+.part1 {
+  top: -35%;
+}
+.part2 {
+  left: 35%;
+}
+.part3 {
+  left: -35%;
+}
+/* Permet de définir les keys d'une animation.
+Elle doit au moins avoir une étape de fin (to ou 100%) mais aura généralement aussi une étape de départ ( from ou 0)
+On peut ajouter autant d'étape que l'on veut en pourcentage  */
+@keyframes cloud {
+  from {
+    right: -20vw;
+    height: 5px;
+    width: 5px;
+  }
+  20% {
+    top: 100vh;
+  }
+  60% {
+    top: 0;
+  }
+  65% {
+    height: 50px;
+    width: 50px;
+  }
+  to {
+    right: 100vw;
+    height: 250px;
+    width: 250px;
+  }
+}
+@keyframes darkcloud {
+  0% {
+    background-color: grey;
+  }
+  50% {
+    background-color: white;
+  }
+  100% {
+    background-color: grey;
+  }
+}
+/* animation scroll */
+@keyframes scrollme {
+  from {
+    scale: 0 1;
+  }
+  to {
+    scale: 1 1;
+  }
+}
+@keyframes scrollus {
+  from {
+    left: -20px;
+    rotate: 0;
+  }
+  to {
+    left: 100vw;
+    rotate: 1440deg;
+  }
+}
+body.scroll {
+  overflow: auto;
+  height: auto;
+}
+.scroll p {
+  margin-bottom: 20vh;
+}
+.scroll header {
+  position: fixed;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  background: lightcyan;
+}
+.scroll .progress {
+  height: 20%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: green;
+  /* transform-origin permet d'indiquer quelle partie de l'élément reste stable lors d'une transformation. par défaut le centre */
+  transform-origin: left;
+  scale: 0.5 1;
+  animation-name: scrollme;
+  animation-timing-function: linear;
+  /* auto ne fonctionne qu'en changeant la timeline */
+  animation-duration: auto;
+  /* scroll() permet de se baser non plus sur une durée, mais sur le scrolling de la page.
+    Il est d'ailleurs possible de changer cela pour se baser sur le scrolling d'un autre élément */
+  animation-timeline: scroll();
+}
+.scroll .ball {
+  translate: -100% 0;
+  position: absolute;
+  bottom: 20px;
+  border-radius: 50%;
+  background: radial-gradient(
+    at 30% 30%,
+    rgb(251, 199, 199),
+    rgb(255, 140, 105)
+  );
+  width: 20px;
+  aspect-ratio: 1/1;
+  animation: scrollus auto linear;
+  animation-timeline: scroll();
+}

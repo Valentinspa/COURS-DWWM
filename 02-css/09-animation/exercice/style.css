@@ -1,0 +1,50 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@keyframes loadcircle{
+    0% {transform: rotate(0deg)}
+    100% {transform: rotate(360deg);}
+}
+#load{
+    position: absolute;
+    top:150px;
+    left:150px;
+    translate: -50% -50%;
+    
+    border: 5px solid transparent;
+    border-radius: 50%;
+    border-top: 5px solid red;
+    width: 100px;
+    height: 100px;
+    animation: loadcircle 1.9s linear infinite;
+}
+#load2{
+    position: absolute;
+    top:150px;
+    left:150px;
+    translate: -50% -50%;
+    
+    border: 5px solid transparent;
+    border-radius: 50%;
+    border-top: 5px solid brown;
+    width: 85px;
+    height: 85px;
+    animation: loadcircle 1.5s linear infinite;
+}
+#load3{
+    position: absolute;
+    top:150px;
+    left:150px;
+    translate: -50% -50%;
+    
+    border: 5px solid transparent;
+    border-radius: 50%;
+    border-top: 5px solid pink;
+    width: 65px;
+    height: 65px;
+    animation: loadcircle 1.2s linear infinite;
+}
