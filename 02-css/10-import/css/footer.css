@@ -1,0 +1,10 @@
+footer
+{
+    background-color: chartreuse;
+}
+footer ul
+{
+    display: flex;
+    justify-content: space-evenly;
+    padding: var(--default-pading);
+}

@@ -1,2 +1,4 @@
 *.zip
 *.mp4
+fontawesome-*
+node_modules/

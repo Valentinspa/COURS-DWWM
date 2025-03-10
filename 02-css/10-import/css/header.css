@@ -1,0 +1,9 @@
+header
+{
+    background-color: aquamarine;
+    padding: var(--default-pading);
+}
+header h1
+{
+    text-align: center;
+}

@@ -1,0 +1,26 @@
+/* 
+    font-awesome peut être utilisé en téléchargeant les images.
+    EN copiant le svg, ou en installant la bibliothèque afin d'utiliser les balises "<i></i>"
+
+    Les svg et images sont à traiter comme des images concernant la taille, mais les balises "i" devront être modifié comme une police d'écriture.
+*/
+img, svg
+{
+    max-width: 200px;
+}
+i
+{
+    font-size: 177px;
+}
+img, svg, i
+{
+    /* ne modifie que la balise "i" */
+    color: green;
+    /* fill et stroke permettent la modification de SVG */
+    fill: yellow;
+    stroke: red;
+}
+
+/* 
+    font-awesome peut être installé, en téléchargeant directment la bibliothèque, en utilisant un CDN ou alors avec NPM.
+*/
