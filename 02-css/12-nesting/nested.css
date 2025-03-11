@@ -1,0 +1,135 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+body>header
+{
+    background-color: lightgreen;
+    text-align: center;
+    padding: 1rem;
+    /* & représente le selecteur parent, ici "header" */
+    &>h1
+    {
+        font-size: 3rem;
+    }
+    &>p
+    {
+        font-size: 1.5rem;
+    }
+}
+main
+{
+    width: 80%;
+    margin: auto;
+    background-color: lightcyan;
+    /* si & n'est pas précisé, cela revient au même qu'écrire "& nouveauSelecteur" */
+    section
+    {
+        margin: 20px 50px;
+        padding: 10px;
+        border-radius: 10px;
+        & h2
+        {
+            text-indent: 20px;
+            text-decoration: underline dashed red;
+        }
+        & > p
+        {
+            margin: 1em auto;
+            text-align: justify;
+        }
+        /* 
+            Ici le & est très important:
+                &:first-child 
+            équivaut à :
+                main section:first-child
+            Mais :
+                :first-child
+            équivaut à :
+                main section :first-child
+        */
+        &:first-child, &:last-child
+        {
+            background-color: lightsalmon;
+            box-shadow: 5px 5px 3px rgba(136, 84, 64, 0.432);
+        }
+        &:first-child span
+        {
+            font-family: monospace;
+        }
+        &:nth-child(2)
+        {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            &>h2
+            {
+                grid-column: 1/-1;
+            }
+            & article
+            {
+                border: 2px solid black;
+                border-radius: 5px;
+                padding: 5px;
+                background-color: antiquewhite;
+                box-shadow: 5px 5px 3px rgba(139, 131, 120, 0.5);
+                & h3
+                {
+                    text-align: center;
+                    font-size: 1.5em;
+                }
+                & footer
+                {
+                    text-align: right;
+                }
+            }
+        } /* fin:nth-child(2);*/
+        &:last-child h2
+        {
+            text-decoration: underline dotted blue;
+            /* On peut aussi utiliser le nesting pour les éléments suivants */
+            & + p
+            {
+                font-size: 1.2em;
+                & ~ p
+                {
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}
+body > footer
+{
+    background-color: lightskyblue;
+    padding: 20px;
+    font-size: 1.5em;
+    & ul
+    {
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+    }
+}
+.strong
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* 
+        Je peux aussi utiliser "&" comme enfant et non comme parent:
+    */
+    :is(header) &
+    {
+        text-decoration: underline;
+    }
+    :is(main) &
+    {
+        font-weight: bold;
+    }
+}
