@@ -1,0 +1,44 @@
+exercice 1.1:
+b=4
+a=3
+
+exercice 1.2:
+a=2
+b=3
+c=1
+
+exercice 1.3:
+a=6
+b=2
+
+exercice 1.4:
+a=13
+b=13
+c=13
+
+exercice 1.5:
+a=2 / a=5
+b=2 / b=5
+
+exercice 1.6:
+a=3
+b=6
+c=a
+a=b
+b=c
+resultat : 
+b=3
+a=6
+
+exercice 1.7:
+a=1
+b=2
+c=3
+d=a
+a=c
+c=b
+b=d
+resultat :
+a=3
+b=1
+c=2
