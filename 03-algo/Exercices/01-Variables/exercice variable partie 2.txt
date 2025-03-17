@@ -1,0 +1,5 @@
+exercice 2.1 : 
+val = 231
+double = 462
+
+exercice 2.2 :
