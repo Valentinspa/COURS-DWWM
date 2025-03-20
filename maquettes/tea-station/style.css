@@ -1,0 +1,20 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+menu a {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  color:cadetblue;
+}
+header{
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/maquettes/tea-station/assets/image/main-bcg.jpeg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
