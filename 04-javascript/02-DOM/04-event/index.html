@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les évènements en JS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+    <script src="./exercice/script.js" defer></script>
+</head>
+<body>
+    <!-- (header>h1>{Ceci n'a aucun sens})+(nav>ul>(li.menu$*4>{Menu $})+li.menu5>a[href="https://www.google.fr"]>{Menu 5})+(main>(.div1>input:text+br+button>{Clique Moi !})+(.div2>input:color+br+button>{Clique Moi !})+(.div3>button>{Clique Moi !})+.div4>.grandParent>.parent>.enfant>button>{Clique Moi !})+footer>span.endOfFile>{C'est la fin du M... Fichier !} -->
+    <!-- debut exercice -->
+    <!-- (.modal.m2.hidden>(h2>{Santé})+(p>lorem)+(button>{Bidule})+button>{fermer la modale}) -->
+    <div class="modal m2 hidden">
+        <h2>Santé</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis temporibus, esse rerum sed nulla dicta sapiente nesciunt ratione, saepe assumenda mollitia quaerat commodi deserunt sint? Qui optio quasi maiores perspiciatis.</p>
+        <button>bidule</button>
+        <button>fermer la modale</button>
+    </div>
+    <!-- fin exercice -->
+    <header>
+        <h1>Ceci n'a aucun sens</h1>
+    </header>
+    <nav>
+        <ul>
+            <li class="menu1">Menu 1</li>
+            <!-- On peut aussi ajouter un évènement directement dans le html
+            en attribut de la balise. ici on doit bien écrire la fonction appelé
+            avec des parenthèses et lui indiquer qu'elle prend l'évènement -->
+            <li class="menu2" onclick="test(event)">Menu 2</li>
+            <li class="menu3">Menu 3</li>
+            <li class="menu4">Menu 4</li>
+            <li class="menu5"><a href="https://www.google.fr">Menu 5</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="div1">
+            <input type="text"> <br>
+            <button>clique moi !</button>
+        </div>
+        <div class="div2">
+            <input type="color"> <br>
+            <button>clique moi !</button>
+        </div>
+        <div class="div3"><button>clique moi !</button></div>
+        <div class="div4">
+            <div class="grandParent">
+                <div class="parent">
+                    <div class="enfant">
+                        <button>clique moi !</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer><span class="endOfFile">C'est la fin du M... fichier !</span></footer>
+</body>
+</html>
