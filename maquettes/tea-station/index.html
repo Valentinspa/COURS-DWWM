@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tea Station" />
     <title>Tea Station</title>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -17,13 +18,15 @@
     <header>
       <div class="nav">
         <label for="burger">Menu</label>
-        <input type="checkbox" id="burger"/>
+        <input type="checkbox" id="burger" />
         <nav>
           <menu>
-            <a href="#">HOME</a>
-            <a href="#">SKILLS</a>
-            <a href="#">ABOUT</a>
-            <a href="#">PRODUCTS</a>
+            <ul>
+              <li><a href="#">HOME</a></li>
+              <li><a href="#">SKILLS</a></li>
+              <li><a href="#">ABOUT</a></li>
+              <li><a href="#">PRODUCTS</a></li>
+            </ul>
           </menu>
         </nav>
       </div>
@@ -65,8 +68,8 @@
         </p>
       </div>
     </section>
-    <section>
-      <img src="./assets/image/about-bcg.jpeg" alt="" />
+    <section id="about">
+      <img src="./assets/image/about-bcg.jpeg" alt="About Our Tea Station" />
       <h2>About Our Tea Station</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quasi
@@ -79,7 +82,7 @@
       <button>LEARN MORE</button>
     </section>
 
-    <section>
+    <section id="products">
       <div>
         <h2>Check Out Our Products</h2>
         <p>
@@ -106,7 +109,8 @@
         <h3>$6.99</h3>
       </div>
     </section>
-    <section>
+
+    <section id="services">
       <h2>Explore Our Services</h2>
       <div>
         <img src="./assets/image/product-1.jpeg" alt="Custom Recipes" />
