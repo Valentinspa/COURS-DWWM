@@ -1,0 +1,68 @@
+.clock {
+  border-radius: 50%;
+  background: #fff url(./ios_clock.svg) no-repeat center;
+  background-size: 88%;
+  height: 20em;
+  padding-bottom: 31%;
+  position: relative;
+  width: 20em;
+}
+
+.minutes-container, .hours-container, .seconds-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+.hours {
+  background: red;
+  width: 2.5%;
+  height: 10%; 
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: translateX(-50%);
+}
+
+
+.minutes {
+  background: blue;
+  width: 2%;
+  height: 17%; 
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: translateX(-50%);
+}
+
+
+.seconds {
+  background: black;
+  width: 1%;
+  height: 18%; 
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: translateX(-50%);
+  z-index: 8;
+}
+
+
+.clock:after {
+  background: #000;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 3%;
+  height: 3%;
+  z-index: 10;
+}
