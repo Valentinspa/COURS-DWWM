@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juste Prix</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <h1>Juste Prix</h1>
+    <div class="card-container">
+        <div class="card" id="flipCard">
+            <div class="card-front">
+                <div>
+                    <h2 id="mystere">?</h2>
+                </div>
+            </div>
+            <div class="card-back">
+                <div>
+                    <h2 id="resultat"></h2>
+                    <button id="return" class="restart-btn">Recommencer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p id="message">Veuillez choisir un nombre entre 1 et 100, vous avez 7 essais :</p>
+    <input type="number" id="prix" placeholder="Entrez un prix">
+    <button id="proposer">Proposer</button>
+
+</body>
+</html>

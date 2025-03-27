@@ -1,0 +1,162 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightsalmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh; 
+    padding: 20px; 
+}
+
+h1 {
+    color: brown;
+    text-decoration: underline dotted orangered;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 50px;
+    text-align: center; 
+}
+
+p {
+    color: brown;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 15px;
+    text-align: center; 
+}
+
+button {
+    background-color: brown;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.card-container {
+    width: 300px; 
+    height: 400px; 
+    perspective: 1000px;
+    margin: 50px auto;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    cursor: pointer;
+}
+
+
+
+.card-front, 
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-front {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 250 350'%3E%3Crect width='250' height='350' fill='white'/%3E%3Cpath d='M0 0 L250 0 L250 350 L0 350 Z' fill='%230D47A1' stroke='none'/%3E%3Cg fill='white' opacity='0.7'%3E%3Cpath d='M10 10 L240 10 L240 340 L10 340 Z' fill='none' stroke='white' stroke-width='2' stroke-dasharray='10,5'/%3E%3Cpath d='M20 20 L230 20 L230 330 L20 330 Z' fill='none' stroke='white' stroke-width='1' opacity='0.5'/%3E%3C/g%3E%3Cpath d='M0 0 L250 0 L250 350 L0 350 Z' fill='url(%23pattern)' opacity='0.2'/%3E%3Cdefs%3E%3Cpattern id='pattern' x='0' y='0' width='20' height='20' patternUnits='userSpaceOnUse'%3E%3Cpath d='M0 10 L10 0 L20 10 L10 20 Z' fill='white' opacity='0.3'/%3E%3C/pattern%3E%3C/defs%3E%3C/svg%3E");
+    background-size: cover;
+    color: white;
+    z-index: 2;
+    transform: rotatey(0deg);
+    flex-direction: column; 
+}
+
+.card-back {
+    background-color: white;
+    color: black;
+    transform: rotatey(180deg);
+    z-index: 1;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.card-back h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-back p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.restart-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0D47A1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.restart-btn:hover {
+    background-color: #1565C0;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#prix {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#proposer {
+    margin-top: 10px;
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+}
+#resultat{
+    color:brown;
+    font-size: 100px;
+    border: 3px solid brown;
+}
+#proposer {
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#proposer:hover {
+    background-color:#8B4513 ;
+}
+#mystere{
+    font-size: 150px;
+}
