@@ -1,0 +1,7 @@
+select {
+    width: 150px;
+    border: 1px solid black;
+}
+select[multiple] {
+    height: 100px;
+}

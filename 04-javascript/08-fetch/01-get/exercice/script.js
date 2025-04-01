@@ -1,4 +1,6 @@
 "use strict"
+//TODO 1
+
 const url = "./exercice/hero.json";
 const select = document.getElementById('select');
 fetch(url).then(handleRequest);
@@ -12,8 +14,8 @@ function handleRequest(response)
         .then(function(data)
         {
             console.log(data);
-            data.members.forEach(memb=> {select.innerHTML +=
-            `<option>${memb.name}</option>`;
+            data.members.forEach(member=> {select.innerHTML +=
+            `<option>${member.name}</option>`;
             });
         
         });
@@ -30,11 +32,14 @@ function apiRequest(response)
     if(response.ok)
     {
         console.log(apiRequest);
-        response.json().then(function(dataApi){
+        response.json()
+        .then(function(dataApi)
+        {
+            console.log(dataApi);
             dataApi.forEach(api=> {document.body.innerHTML +=
-               `<img>${api.url}</img>` 
-            })
-        })
+            `<img src="${api.url}">` 
+            });
+        });
     }
 
-}
+};
