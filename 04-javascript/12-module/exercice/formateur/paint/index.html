@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application de dessin</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" type="module"></script>
+</head>
+<body class="paint-app-container">
+    <div class="interface">
+        <div class="interface-container interface-left">
+            <input type="color" name="color-select" id="color-select" class="btn btn-color" title="shortcut: 'shift'+'c'">
+            <input type="number" name="size-select" id="size-select" min="1" max="100" class="btn btn-size" title="shortcut: 'shortcut: 'shift'+'+' | 'shift'+'-'">
+            <button class="btn btn-tool btn-pen" data-tool="pen"><img src="./icons/pen.svg" alt="Pen Button"></button>
+            <button class="btn btn-tool btn-square" data-tool="square"><img src="./icons/square.svg" alt="Square Button"></button>
+            <button class="btn btn-tool btn-circle" data-tool="circle"><img src="./icons/circle.svg" alt="Circle Button"></button>
+        </div>
+        <div class="interface-container interface-right">
+            <button class="btn btn-undo" disabled="true"><img src="./icons/undo.svg" alt="Undo Button" title="shortcut: 'shift'+'z'"></button>
+            <button class="btn btn-redo" disabled="true"><img src="./icons/redo.svg" alt="Redo Button" title="shortcut: 'shift'+'y'"></button>
+            <button class="btn btn-save" title="shortcut: 'shift'+'s'"><img src="./icons/save.svg" alt="Save Button"></button>
+            <button class="btn btn-load" title="shortcut: 'shift'+'l'"><img src="./icons/load.svg" alt="Load Button"></button>
+        </div>
+    </div>
+    <div class="canvas-container">
+        <canvas class="paint-app"></canvas>
+    </div>
+</body>
+</html>

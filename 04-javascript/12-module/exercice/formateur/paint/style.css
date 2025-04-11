@@ -1,0 +1,47 @@
+*[class], ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body.paint-app-container
+{
+    overflow: hidden;
+    display: grid;
+    height: 100dvh;
+    grid-template-rows: auto 1fr;
+}
+.interface
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 2px solid black;
+    & .interface-container
+    {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        & .btn
+        {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            &:has(img)
+            {
+                padding: 10px;
+            }
+        }
+    }
+}
+.canvas-container
+{
+    position: relative;
+}
+.paint-app{
+    /* cursor: ; */
+    &[data-tool="square"]
+    {
+        cursor: crosshair;
+    }
+}

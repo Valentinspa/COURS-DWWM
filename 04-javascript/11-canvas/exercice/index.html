@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./script.js" defer></script>
     <title>Application de dessin</title>
     <style>
-        *, ::before, ::after
-        {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{overflow: hidden;}
-        canvas{border: 1px solid black;
-        }
+      *,
+      ::before,
+      ::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      canvas {
+        border: 1px solid black;
+        display: block;
+      }
+      #toolbar {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 100;
+        background-color: orange;
+        padding: 10px;
+        border-radius: 8px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+      }
     </style>
-
-</head>
-<body>
+  </head>
+  <body>
+    <div id="toolbar">
+      <input type="color" id="colorPicker" value="#000000">
+      <label for="trait">Taille du trait :</label>
+      <input type="range" id="trait" min="1" max="20" value="1">
+      <button onclick="undo()">Annuler</button>
+      <button onclick="redo()">Refaire</button>
+      <button onclick="saveImage()">Sauvegarder</button>
+      <input type="file" id="charger" accept="image/*">
+    </div>
     <canvas></canvas>
-</body>
+  </body>
 </html>
