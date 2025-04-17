@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les templates et slots</title>
+    <script src="./script.js" type="module"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <super-card></super-card>
+
+    <!-- 
+        Les slots ne fonctionnent qu'avec les custom element et le shadow DOM.
+        Ils permettent de créer des places dans le template où des données pourront être insérées.
+        Si on ne précise rien (comme au dessus), le slot gardera son contenu par défaut.
+
+        Si par contre on donne à notre custom element des éléments HTML qui ont des attributs "slot" dont la valeur correspond au "name" d'un slot du template, alors celui ci se verra remplacé.
+
+        On met généralement un name à chaque slot, mais si on ne le fait pas sur l'un d'entre eux, il va récupérer tout les éléments qui n'ont pas d'attribut slot.
+    -->
+    <super-card>
+        <span slot="title">Mon Super Titre</span>
+        <strong slot="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus porro, amet repellendus asperiores animi aspernatur quaerat incidunt illum maiores labore aut rerum, similique fuga dignissimos pariatur at consequuntur ea molestias?</strong>
+        <span>Super Produit !</span>
+        <span> test</span>
+    </super-card>
+    <super-card>
+        <em slot="title">Un second titre</em>
+        <span slot="text"><img src="../02-shadowDOM/exercice/meteo.png" alt="meteo"> La météo du jour</span>
+        <span>CLIQUE MOI !</span>
+    </super-card>
+    <!-- exemple sans shadowDom -->
+    <template id="blog">
+        <article>
+            <div>
+                <h2>title</h2>
+                <p>text</p>
+                <a href="src">src</a>
+            </div>
+        </article>
+    </template>
+    <!-- Exemple avec shadowDOM -->
+    <template id="card">
+        <style>
+            ::slotted(*)
+            {
+                font-size: 1.2em;
+            }
+            div{
+                display: inline-block;
+                width: 25vw;
+                border: 2px solid black;
+                border-radius: 5px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+                padding: 1rem;
+            }
+            h1{
+                margin-top: 0;
+            }
+            button{
+                text-align: center;
+                background-color:lightgreen;
+            }
+        </style>
+        <div>
+            <h1><slot name="title">titre</slot></h1>
+            <p><slot name="text">text</slot></p>
+            <button><slot>bouton</slot></button>
+        </div>
+    </template>
+</body>
+</html>

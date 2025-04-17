@@ -1,0 +1,31 @@
+rating-stars {
+    display: flex;
+    width: fit-content;
+
+    i {
+        width: 2rem;
+        height: 2rem;
+        color: black;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &.fa-regular {
+            color: grey;
+        }
+
+        &.fa-solid {
+            color: orange;
+        }
+    }
+
+    &[disabled] {
+        opacity: 25%;
+        pointer-events: none;
+
+        i {
+            color: black;
+        }
+    }
+}

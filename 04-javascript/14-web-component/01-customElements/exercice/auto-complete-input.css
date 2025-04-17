@@ -1,0 +1,25 @@
+[is="auto-complete-input"]{
+    position: relative;
+    & ~ button {
+        left: 0;
+        position: absolute;
+    }
+}
+
+#auto-complete-input-options-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    button {
+        text-align: left;
+        width: 100%;
+        background-color: white;
+        border: 1px solid lightgrey;
+        border-top: none;
+        &:hover, &.hover {
+            background-color: lightblue;
+        }
+    }
+}
