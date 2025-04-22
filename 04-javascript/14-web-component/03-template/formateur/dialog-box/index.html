@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Dialog Box</title>
+  <script src="./script.js" defer></script>
+</head>
+<body>
+
+<dialog-box>
+  <span slot="title">Bienvenue !</span>
+  <p>Merci de vous être connecté.</p>
+</dialog-box>
+
+<template id="dialog-template">
+  <style>
+    .modal {
+      border: 1px solid #aaa;
+      padding: 10px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    ::slotted([slot="title"]) {
+      font-weight: bold;
+    }
+  </style>
+  <div class="modal">
+    <slot name="title"></slot>
+    <slot></slot>
+    <button id="close-btn">Fermer</button>
+  </div>
+</template>
+
+</body>
+</html>
