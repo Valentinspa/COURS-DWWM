@@ -1,0 +1,31 @@
+services:
+# chaque container est un service
+  web:
+  # build permet de construire un container depuis un dockerfile
+    build: .
+    # On indique les ports qui doivent être ouverts
+    ports:
+      - "8080:80"
+    # On indique notre bind mount
+    volumes:
+      - .:/var/www/html
+    # On peut ajouter des variables d'environnement
+    environment:
+      - MA_MOYENNE_VARIABLE=bidule
+    container_name: serverApache2025
+    restart: always
+    # Indique qu'il doit attendre que le service "bdd" soit lancé avant de se lancer lui même.
+    depends_on:
+      - bdd
+  bdd:
+  # On peut aussi lancer un service depuis une image
+    image: mariadb
+    ports:
+      - "3308:3306"
+    # Parfois certaines images demandent de paramètrer des variables d'environnement spécifiques.
+    environment:
+      - MARIADB_ROOT_PASSWORD=root
+    # permet de donner un nom au container
+    container_name: serverMariaDB2025
+    # Permet de relancer le container si il s'arrête
+    restart: always

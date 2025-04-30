@@ -1,0 +1,44 @@
+services:
+  mysql:
+    image: mariadb
+    container_name: serverCoursSQL2025
+    restart: unless-stopped
+    environment:
+      - MARIADB_ROOT_PASSWORD=root
+    ports:
+      - "3305:3306"
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: serverCoursPHPMyAdmin2025
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - "8075:80"
+  mongodb:
+    image: mongo
+    container_name: serverCoursMongo2025
+    restart: unless-stopped
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    ports:
+      - "27015:27017"
+  mongoexpress:
+    container_name: serverMongoExpress2025
+    image: mongo-express
+    ports:
+      - "8076:8081"
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=root
+      - ME_CONFIG_BASICAUTH_USERNAME=root
+      - ME_CONFIG_BASICAUTH_PASSWORD=root 

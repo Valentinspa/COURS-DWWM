@@ -1,0 +1,61 @@
+services:
+  web:
+    build: .
+    depends_on:
+      - bddsql
+      - bddnosql
+    container_name: serverApacheCoursPHP
+    restart: unless-stopped
+    ports:
+      - "8090:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - ALLOW_OVERRIDE=true
+      - DB_HOST=bddsql
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_NAME=blog
+  bddsql:
+    image: mariadb
+    container_name: serverMariaDBCoursPHP
+    restart: unless-stopped
+    environment:
+      - MARIADB_ROOT_PASSWORD=root
+    ports:
+      - "3390:3306"
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: serverPHPMyAdminCoursPHP
+    restart: unless-stopped
+    depends_on:
+      - bddsql
+    environment:
+      PMA_HOST: bddsql
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - "8091:80"
+  bddnosql:
+    image: mongo
+    container_name: serverMongoCoursPHP
+    restart: unless-stopped
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    ports:
+      - "27090:27017"
+  mongoexpress:
+    container_name: serverMongoExpressCoursPHP
+    image: mongo-express
+    ports:
+      - "8092:8081"
+    depends_on:
+      - bddnosql
+    restart: unless-stopped
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=bddnosql
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=root
+      - ME_CONFIG_BASICAUTH_USERNAME=root
+      - ME_CONFIG_BASICAUTH_PASSWORD=root 
