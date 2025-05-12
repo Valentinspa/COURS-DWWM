@@ -1,14 +1,14 @@
 -- Récupérer la BDD dans les ressources.
 --  1. Quels sont les tickets qui comportent l’article d’ID 500, afficher le numéro de  ticket uniquement ? (24 résultats attendus)
-
+    SELECT `NUMERO_TICKET` FROM `ventes` WHERE `ID_ARTICLE` = 500; 
 --  2. Afficher les tickets du 15/01/2014. (1 résultat attendu)
-
+    SELECT * FROM `ticket` WHERE `DATE_VENTE` LIKE "%2014-01-15%"; 
 --  3. Afficher les tickets émis du 15/01/2014 au 17/01/2014.(4 résultats attendus)
-
+    SELECT * FROM `ticket` WHERE `DATE_VENTE` BETWEEN "2014-01-15" AND "2014-01-17"; 
 --  4. Afficher la liste des articles apparaissant à 50 et plus exemplaires sur un ticket.(1274 résultats attendus)
-
+    SELECT * FROM `ventes` WHERE `QUANTITE` >= 50;
 --  5. Quelles sont les tickets émis au mois de mars 2014.(78 résultats attendus)
-
+    SELECT * FROM `ticket` WHERE `DATE_VENTE` LIKE "%2014-03%"; 
 --  6. Quelles sont les tickets émis entre les mois de mars et avril 2014 ? (166 résultats attendus)
 
 --  7. Quelles sont les tickets émis au mois de mars et juin 2014 ? (174 résultats attendus)
