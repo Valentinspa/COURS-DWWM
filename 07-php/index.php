@@ -44,7 +44,7 @@ require "./ressources/template/_header.php";
                 </li> -->
             </ol>
         </li>
-        <!-- <li>
+        <li>
             <h3>02 - Formulaire :</h3>
             <ol>
                 <li>
@@ -69,7 +69,7 @@ require "./ressources/template/_header.php";
                     <a href="./02-form/07-mail.php">Mailer</a>
                 </li>
             </ol>
-        </li> -->
+        </li>
         <!-- <li>
             <h3>03 - CRUD :</h3>
             <ol>
