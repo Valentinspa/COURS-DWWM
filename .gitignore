@@ -2,3 +2,4 @@
 *.mp4
 fontawesome-*
 node_modules/
+vendor/
