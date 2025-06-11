@@ -73,7 +73,7 @@ require "./ressources/template/_header.php";
                 </li>
             </ol>
         </li>
-        <!-- <li>
+        <li>
             <h3>03 - CRUD :</h3>
             <ol>
                 <li>
@@ -86,6 +86,9 @@ require "./ressources/template/_header.php";
                     <h4>Exercice :</h4>
                     <ul>
                         <li>
+                            <a href="./03-crud/exercice/exercice-crud.php">Exercice CRUD</a>
+                        </li>
+                        <li>
                             <a href="./03-crud/exercice/connexion.php">connexion</a>
                         </li>
                         <li>
@@ -94,7 +97,7 @@ require "./ressources/template/_header.php";
                     </ul>
                 </li>
             </ol>
-        </li> -->
+        </li>
         <!-- <li>
             <h3>04 - ROUTER :</h3>
             <ol>

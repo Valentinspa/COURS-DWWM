@@ -1,3 +1,4 @@
+# Cette version utilise le .env afin de sécuriser les données
 services:
   web:
     build: .
@@ -12,18 +13,23 @@ services:
       - .:/var/www/html
     environment:
       - ALLOW_OVERRIDE=true
-      - DB_HOST=bddsql
-      - DB_USER=root
-      - DB_PASSWORD=root
-      - DB_NAME=blog
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
   bddsql:
     image: mariadb
     container_name: serverMariaDBCoursPHP
     restart: unless-stopped
     environment:
-      - MARIADB_ROOT_PASSWORD=root
+      - MARIADB_ROOT_PASSWORD=${DB_PASSWORD}
     ports:
       - "3390:3306"
+    # le volume déclaré tout en bas permet de garder les données de la bdd quand le compose est down
+    # Le bind mount de l'entrypoint permet de charger des fichiers SQL dès le lancement du compose.
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./ressources/database:/docker-entrypoint-initdb.d
   phpmyadmin:
     image: phpmyadmin
     container_name: serverPHPMyAdminCoursPHP
@@ -31,9 +37,9 @@ services:
     depends_on:
       - bddsql
     environment:
-      PMA_HOST: bddsql
-      PMA_USER: root
-      PMA_PASSWORD: root
+      PMA_HOST: ${DB_HOST}
+      PMA_USER: ${DB_USER}
+      PMA_PASSWORD: ${DB_PASSWORD}
     ports:
       - "8091:80"
   bddnosql:
@@ -41,8 +47,8 @@ services:
     container_name: serverMongoCoursPHP
     restart: unless-stopped
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=root
+      - MONGO_INITDB_ROOT_USERNAME=${DB_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${DB_PASSWORD}
     ports:
       - "27090:27017"
   mongoexpress:
@@ -54,8 +60,11 @@ services:
       - bddnosql
     restart: unless-stopped
     environment:
-      - ME_CONFIG_MONGODB_SERVER=bddnosql
-      - ME_CONFIG_MONGODB_ADMINUSERNAME=root
-      - ME_CONFIG_MONGODB_ADMINPASSWORD=root
-      - ME_CONFIG_BASICAUTH_USERNAME=root
-      - ME_CONFIG_BASICAUTH_PASSWORD=root 
+      - ME_CONFIG_MONGODB_SERVER=${DB_HOST_MONGO}
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=${DB_USER}
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=${DB_PASSWORD}
+      - ME_CONFIG_BASICAUTH_USERNAME=${DB_USER}
+      - ME_CONFIG_BASICAUTH_PASSWORD=${DB_PASSWORD}
+# Ceci permet de créer un volume dans docker, qui est une zone permettant le stockage de donnée hors des container.
+volumes:
+  mariadb_data:
