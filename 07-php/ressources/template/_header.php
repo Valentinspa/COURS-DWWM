@@ -1,3 +1,9 @@
+<?php $test = "Coucou"; 
+if(session_status() !== PHP_SESSION_ACTIVE)
+{
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,7 +23,23 @@
 <body>
     <header>
         <h1><?php echo $title??"Cours PHP" ?></h1>
+        <?php 
+            // affiche le nom de l'utilisateur si il est connecté
+            if(isset($_SESSION["logged"]) || isset($_SESSION["logged_in"]))
+            {
+                echo "<h2>{$_SESSION['username']}</h2>";
+            }
+        ?>
+        <?php // include __DIR__ . "/_test.php"; ?>
     </header>
     <!-- On ouvre le body ici mais on ne le ferme pas, il sera fermé
     dans le footer. -->
     <main class="<?php echo $mainClass??"" ?>">
+        <!-- gestion des messages flash : -->
+        <?php 
+            if(isset($_SESSION["flash"]))
+            {
+                echo "<div class='flash-message'>{$_SESSION['flash']}</div>";
+                unset($_SESSION["flash"]);
+            }
+        ?>

@@ -86,13 +86,16 @@ require "./ressources/template/_header.php";
                     <h4>Exercice :</h4>
                     <ul>
                         <li>
-                            <a href="./03-crud/exercice/exercice-crud.php">Exercice CRUD</a>
+                            <a href="./03-crud/exercice/exercice-1.php">Exercice 1</a>
                         </li>
                         <li>
-                            <a href="./03-crud/exercice/connexion.php">connexion</a>
+                            <a href="./03-crud/exercice/exercice-connexion.php">Connexion</a>
                         </li>
                         <li>
-                            <a href="./03-crud/exercice/deconnexion.php">déconnexion</a>
+                            <a href="./03-crud/exercice/exercice-deconnexion.php">Déconnexion</a>
+                        </li>
+                        <li>
+                            <a href="./03-crud/exercice/message.php">Message</a>
                         </li>
                     </ul>
                 </li>

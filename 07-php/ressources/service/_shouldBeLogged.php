@@ -15,6 +15,8 @@ if(session_status() === PHP_SESSION_NONE)
  */
 function shouldBeLogged(bool $logged = true, string $redirect = "/"): void
 {
+    $logged_in = $_SESSION["logged"]??$_SESSION["logged_in"]??false;
+
     if($logged)
     {
         if(isset($_SESSION["expire"]))
@@ -31,7 +33,7 @@ function shouldBeLogged(bool $logged = true, string $redirect = "/"): void
                 $_SESSION["expire"] = time() + 3600;
             }
         } // fin vérification expire
-        if(!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true)
+        if(!$logged_in )
         {
             // Si l'utilisateur n'est pas connecté, on le redirige.
             header("Location: $redirect");
@@ -45,7 +47,7 @@ function shouldBeLogged(bool $logged = true, string $redirect = "/"): void
             alors on vérifie si il est connecté,
             et dans ce cas on le redirige
         */
-        if(isset($_SESSION["logged"]) && $_SESSION["logged"] === true)
+        if($logged_in)
         {
             header("Location: $redirect");
             exit;
