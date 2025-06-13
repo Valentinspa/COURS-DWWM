@@ -20,7 +20,7 @@ if(!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true)
         unset($_SESSION["expire"]);
     Ou alors si je n'ai rien d'autre de sauvegardé en session, détruire la session en entier.
 */
-unset($_SESSION["logged_in"]); // Vide la session
+unset($_SESSION);
 session_destroy();
 setcookie("PHPSESSID", "", time()-3600);
 // Puis une fois déconnecté, on redirige l'utilisateur ailleurs :
