@@ -1,0 +1,21 @@
+# Le fichier .htaccess est lu par apache à chaque requête passant par son dossier.
+# On va s'en servir pour rediriger toute les requêtes vers un même fichier.
+
+# --- Activer l'outil de réécriture d'URL.
+RewriteEngine On
+
+# ---- Exclure les fichiers statiques de la redirection avec une condition (images, css, js...)
+RewriteCond %{REQUEST_URI} !\.(png|jpg|gif|jpeg|svg|css|js|ico)$
+# %{REQUEST_URI} est une variable fournie par apache
+# "!" indique qu'on souhaite inverser la condition suivante.
+# Puis ce qui suis le "!" est une REGEX
+
+# --- Rediriger tout le reste vers index.php
+RewriteRule (.*) index.php [QSA,L]
+
+# (.*) regex indiquant que l'on souhaite réécrire tout l'url.
+# "index.php" nouvel URL.
+
+# flag utilisés : [QSA,L]
+# QSA (Query String Append) : conserver les paramètres en GET
+# L (Last) : stoppe l'application des règles suivante si celle-ci est appliqué.

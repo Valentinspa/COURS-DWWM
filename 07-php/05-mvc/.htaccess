@@ -1,0 +1,8 @@
+# --- Activer l'outil de réécriture d'URL.
+RewriteEngine On
+
+# ---- Exclure les fichiers statiques de la redirection avec une condition (images, css, js...)
+RewriteCond %{REQUEST_URI} !\.(png|jpg|gif|jpeg|svg|css|js|ico)$
+
+# --- Rediriger tout le reste vers index.php
+RewriteRule (.*) index.php [QSA,L]
