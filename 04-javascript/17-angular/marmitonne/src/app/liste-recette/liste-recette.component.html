@@ -1,0 +1,18 @@
+<div class="container">
+@for(rec of recetteListe; track $index)
+{
+    <div class="recette" appBorderCard="{{rec.type|typeColor}}" (click)="goToRecette(rec)">
+        <div class="image">
+            <img src="./photos/{{rec.image}}" alt="{{rec.name}}">
+        </div>
+        <ul>
+            <li><span class="label">Nom :</span> {{rec.name|uppercase}}</li>
+            <li><span class="label">Durée :</span> {{rec.duration}} minutes</li>
+            <li><span class="label">Description :</span> {{rec.description}}</li>
+            <li><span class="label">Crée le :</span> {{rec.createdAt|date:"dd/MM/yyyy"}}</li>
+        </ul>
+        <span class="type" [style.backgroundColor]="rec.type|typeColor">{{rec.type}}</span>
+    </div>
+        
+    }
+</div>

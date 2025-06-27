@@ -1,0 +1,45 @@
+<h1 appBorderCard="red">Bienvenue sur {{title}} !</h1>
+<!-- <h2>{{recetteListe[1].name}}</h2> -->
+<!-- Trois façon de modifier un attribut : -->
+<!-- <a href="{{title}}">Lien 1</a><br>
+<a [href]="title">Lien 2</a><br>
+<a [attr.href]="title">Lien 3</a> -->
+<!-- On peut aussi faire dépendre une classe d'une condition -->
+<!-- <div [class.maSuperClass]="0 < 5">Possède ou non une classe</div> -->
+<!-- On peut faire quelque chose de ressemblant sur du style -->
+<!-- <div [style.color]="0 > 5?'red':'green'">Change ma couleur</div> -->
+
+<!-- Les évènements : -->
+<!-- <p (click)="selectRecette(recetteListe[0])">{{recetteListe[0].name}}</p> -->
+
+<!-- <input type="number" (input)="selectRecette($event)"> -->
+<!-- 
+  Ici j'indique la présence d'un évènement à l'input, mais qu'aucune fonction particulière est à lancer 
+  avec "#unNom" je crée une variable contenant mon élément.
+-->
+<!-- <input type="number" (input)="0" #inputRecette> -->
+<!-- <input type="number" (input)="selectRecette(inputRecette.value)" #inputRecette> -->
+<!-- <p>{{ inputRecette.value }}</p> -->
+<!-- Condition récente  -->
+<!-- @if(recetteSelected)
+{
+  <p>Vous avez sélectionné : {{ recetteSelected.name }}</p>
+}
+@else 
+{
+  <p>Aucune recette correspondante.</p>
+} -->
+<!-- Condition Ancienne -->
+<!-- <p *ngIf="recetteSelected">Vous avez sélectionné : {{ recetteSelected.name }}</p>
+<p *ngIf="!recetteSelected">Aucune recette correspondante.</p> -->
+<!-- Boucle Récente -->
+<!-- @for (recette of recetteListe; track $index) 
+{
+  <p>{{recette.name}}</p>
+} -->
+<!-- Boucle Ancienne -->
+<!-- <p *ngFor="let recette of recetteListe">{{recette.name}}</p> -->
+<!-- Sachant que les versions anciennes demandent d'importer "CommonModule" -->
+<!-- <hr> -->
+<router-outlet />
+<!-- <hr> -->
