@@ -4,20 +4,20 @@
     les fonctions prennent des noms plus simple.
 */
 const ROUTES = [
-    "06-poo"=>[
-        "controller"=>"UserController", 
+    "07-poo"=>[
+        "controller"=>"Controller\UserController", 
         "fonction"=>"read"
     ],
-    "06-poo/inscription"=>[
-        "controller"=>"UserController", 
+    "07-poo/inscription"=>[
+        "controller"=>"Controller\UserController", 
         "fonction"=>"create"
     ],
-    "06-poo/user/update"=>[
-        "controller"=>"UserController", 
+    "07-poo/user/update"=>[
+        "controller"=>"Controller\UserController", 
         "fonction"=>"update"
     ],
-    "06-poo/user/delete"=>[
-        "controller"=>"UserController", 
+    "07-poo/user/delete"=>[
+        "controller"=>"Controller\UserController", 
         "fonction"=>"delete"
     ],
 ];
