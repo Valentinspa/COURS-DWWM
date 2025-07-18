@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{parent()}} - Accueil{% endblock %}
+
+{% block body %}
+<h1>{{controller_name | upper}}</h1>
+{{ pays.france }} <br>
+{{ pays.angleterre | reverse }} <br>
+{# Condition #}
+
+<strong>
+{% if chiffre > 5 %}
+    Notre chiffre est plus grand que 5
+{% elseif chiffre < 5 %}
+    Notre chiffre est plus petit que 5
+{% else %}
+    Notre chiffre est 5
+{% endif %}
+</strong>
+
+{# Boucle #}
+<ul>
+    {% for f in fruits %}
+        <li>{{ f }}</li>
+    {% endfor %}
+</ul>
+
+{% for v in tableau_vide %}
+    Le tableau étant vide, ce message ne s'affiche pas.
+{% else %}
+    Votre tableau est vide
+{% endfor %}
+<br>
+{# xss #}
+
+{{xss}}
+{# {{xss | raw}} #}
+
+{# {{dump(app)}} #}
+
+
+{% endblock %}

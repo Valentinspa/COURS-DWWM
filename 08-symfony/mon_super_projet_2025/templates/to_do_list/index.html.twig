@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TodoListController!{% endblock %}
+
+{% block body %}
+<div>
+    Pour ajouter une tache, tapez dans l'url : <strong>{{path("app_todo_add", {label:"leTitre", tache:"laDescription"})}}</strong>
+    <br>
+    <a href="{{path("app_todo_add", {label:"Test", tache:"Ceci est un test"})}}">Tester un ajout par défaut</a>
+</div>
+<ul>
+    {% if app.session.get("todoList") %}
+        {% for labelname, todo in app.session.get("todoList") %}
+            <li>
+                <strong>{{labelname}}</strong> 
+                <span style="text-decoration: {{todo.done?"line-through":""}};">{{todo.tache}}</span>
+                <a href="{{path("app_todo_delete", {label:labelname})}}">Supprimer</a>
+                <a href="{{path("app_todo_update", {label:labelname})}}">Mettre à jour</a>
+            </li>
+        {% endfor %}
+    {% else %}
+        <li>Aucun tache sélectionnée</li>
+    {% endif %}
+</ul>
+{% endblock %}

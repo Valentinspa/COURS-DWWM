@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {# Affichez les messages flashes d'une catégorie : #}
+    {# {% for message in app.flashes("bonjour") %}
+        <div>{{message}}</div>
+    {% endfor %} #}
+    {# Affichez les messages flashes de plusieurs catégories : #}
+    {% for categorie, messages in app.flashes(["bonjour", "redirect"]) %}
+        {% for mess in messages %}
+            <div>
+                <strong>{{categorie}}</strong> :
+                {{mess}}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <h2>Bonjour {{prenom ~ " " ~ nom}}</h2>
+    <p>
+        Déjà {{app.session.get("nbVisite")}} visite(s) !
+    </p>
+    <a href="{{path('app_bonjour', {nom:'Fontaine', prenom:'Jean'})}}">Jean Fontaine</a>
+    <br>
+    <a href="{{path('app_hello', {username:'John'})}}">John Doe</a>
+{% endblock %}
